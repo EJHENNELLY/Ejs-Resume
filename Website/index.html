@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/576146817e.js" crossorigin="anonymous"></script>
+</head>
+<body class="main-content">
+    <header class="container header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hi, I'm <span>EJ Hennelly.</span>
+                </h1>
+                <p>
+                    I am a motivated and results-driven professional with 4+ years of experience in building strong relationships, leading consultations, and delivering value-driven solutions. I have a proven track record of growing and retaining a portfolio of diverse accounts in B2B and B2C settings. <br/>
+                    <br/>A self-starter, I am CompTIA Security + certified and will achieve the AWS Certified Solutions Architect Associate in the near future.  <br/> 
+                    <br/>Excited to discuss how I will be a valuable asset to your team!
+                </p>
+                <p> You are visitor number: <span id="visitor-count">Loading...</span></p>
+
+                <script>
+                    async function fetchVisitorCount() {
+                      try {
+                        const response = await fetch('https://bqi8zdojh8.execute-api.us-east-1.amazonaws.com/prod/counter', {
+                          method: 'GET',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          }
+                        });
+                        if (!response.ok) {
+                          throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        const text = await response.text(); // Get raw text
+                        console.log('Raw response:', text);
+                        const data = JSON.parse(text);      // Parse outer response
+                        console.log('Parsed data:', data);
+                        const bodyData = JSON.parse(data.body); // Parse the body string
+                        console.log('Parsed body:', bodyData);
+                        document.getElementById('visitor-count').textContent = bodyData.visitor_count || 'N/A';
+                      } catch (error) {
+                        console.error('Error fetching visitor count:', error);
+                        document.getElementById('visitor-count').textContent = 'Error';
+                      }
+                    }
+                    window.onload = fetchVisitorCount;
+                </script>
+                <div class="btn-con">
+                    <a href="resume link" class="main-btn">
+                        <span class="btn-text">Download CV</span>
+                        <span class="btn-icon"><i class="fas fa-download"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>     
+    <main>
+        <section class="container about" id="about">
+            <div class="main-title">
+                <h2>About <span>me</span><span class="bg-text">Aboutme</span></h2>
+            </div>
+            <div class="about-container">
+                <div class="left-about">
+                    <h4>Information About me</h4>
+                    <p>
+                        I bring a robust foundation in sales, client relations, and account/project management, where I’ve excelled at understanding client needs, collaborating cross-functionally, and delivering impactful solutions. <br/>
+                        <br/>Eager to pivot into a tech-driven career, I’ve become CompTIA Security+ certified and earned Google’s Cybersecurity Professional Certificate along with TryHackMe’s Security Engineer Path to demonstrate hands-on experience with today's most popular technologies such as Splunk, Metasploit, Wireshark, Tcpdump, and Nmap to name a few. <br/>
+                        <br/>I am also interested in the tools of the future and am actively pursuing the AWS Certified Solutions Architect Associate while building projects with AWS services such as S3, EC2, CloudFront, Dynamodb, Lambda, Route53, IAM, API-Gateway, Amplify, and more. <br/>
+                        <br/>I’m a determined problem-solver and a quick learner who is excited to bring my unique blend of business acumen and technical skills to a new role. I am confident that my experience and passion for improvement will make me a valuable asset to your team!
+                    </p>
+                    <div class="btn-con">
+                        <a href="#" class="main-btn">
+                            <span class="btn-text">Download CV</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right-about">
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">4+</p>
+                            <p class="small-text">Years of <br /> Experience</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">$850K+</p>
+                            <p class="small-text">New Business <br /> Premium</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">4</p>
+                            <p class="small-text">Professional <br /> Certifications</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">10%</p>
+                            <p class="small-text">Sales <br /> Growth</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">300+</p>
+                            <p class="small-text">Happy <br /> Clients</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">5 Star</p>
+                            <p class="small-text">Customer <br /> reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                <h4 class="stat-title">My Skills</h4>
+                <div class="progress-bars">
+                    <div class="progress-bar">
+                        <p class="prog-title">Relationship Management</p>
+                        <div class="progress-con">
+                            <p class="prog-text">100%</p>
+                            <div class="progress">
+                                <span class="rm"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Communication</p>
+                        <div class="progress-con">
+                            <p class="prog-text">100%</p>
+                            <div class="progress">
+                                <span class="comm"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Project Management</p>
+                        <div class="progress-con">
+                            <p class="prog-text">100%</p>
+                            <div class="progress">
+                                <span class="pm"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Presentation</p>
+                        <div class="progress-con">
+                            <p class="prog-text">100%</p>
+                            <div class="progress">
+                                <span class="pres"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Negotiation and Closing</p>
+                        <div class="progress-con">
+                            <p class="prog-text">100%</p>
+                            <div class="progress">
+                                <span class="nego"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Teamwork</p>
+                        <div class="progress-con">
+                            <p class="prog-text">100%</p>
+                            <div class="progress">
+                                <span class="tw"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="stat-title">My Timeline</h4>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <p class="tl-duration">August 2022 - October 2024</p>
+                    <h5>Account Executive<span> - Stacks Brokerage Corp</span></h5>
+                    <p>
+                        As the 1st employee hired outside the state of Florida, I successfully established a strong presence in my region. Sold over $850K in new business premium, acheiving 10% sales growth YoY. Built and managed a book of business with over 50+ clients. Collaborated with Partner of the Brokerage to quote, negotiate, and close a $1.1M account.   
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <p class="tl-duration">January 2022 - July 2022</p>
+                    <h5>Account Executive<span> - Taylor Agency</span></h5>
+                    <p>
+                        Spearheaded lead generation efforts, building a network of prospects through conducting 20+ cold calls daily, utilizing social media, and CRM optimization. Worked closely with sales leadership to develop strategic sales plan that resulted in accomplishing a portfolio of $150K+ in new business premium.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <p class="tl-duration">July 2020 - December 2021</p>
+                    <h5>Account Manager<span> - Taylor Agency</span></h5>
+                    <p>
+                        Collaborated with internal team to manage and grow a book of business with 300+ clients. Provided customer support, executed policy changes, facilitated claims, closed cross selling opportunities, and managed renewals. Accomplished a 90% retention rate, 5% above industry average.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <p class="tl-duration">January 2020 - May 2020</p>
+                    <h5>Intern<span> - University of South Carolina Football</span></h5>
+                    <p>
+                        Assisted the Director of Player Personnel with recruiting efforts, including managing the recruiting database, creating recruiting materials, and organizing recruiting events. Assisted coaching staff with coordinating practice schedule. Delivered correspondence to staff members.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <p class="tl-duration">August 2016 - May 2020</p>
+                    <h5>B.S.<span> - University of South Carolina</span></h5>
+                    <p>
+                        Graduated with a 3.4 GPA, majoring in Sports, Entertainment, and Event Management. 
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+        <section class="container" id="Certificates & Skills">
+            <div class="main-title">
+                <h2>My <span>Certificates & Skills</span><span class="bg-text">CertificatesSkills</span></h2>
+            </div>
+            <div class="certificates">
+                <div class="certificate-item">
+                    <div class="image">
+                        <img src="Images/Sec+.jpg" alt="CompTIA Security+">
+                    </div>
+                    <div class="hover-items">
+                        <h3>CompTIA Security+ CE</h3>
+                        <div class="icons">
+                            <a href="https://www.credly.com/badges/d1e91bc5-11ae-48cf-b4ff-524e42a8b6aa/public_url" class="icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="image">
+                        <img src="Images/GoogCert.png" alt="Google Cybersecurity">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Google Cybersecurity Professional Certificate</h3>
+                        <div class="icons">
+                            <a href="https://www.credly.com/badges/3c3d07dc-5153-4a39-a85d-8a223e10ddaf/public_url" class="icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="image">
+                        <img src="Images/thm.png" alt="TryHackMe">
+                    </div>
+                    <div class="hover-items">
+                        <h3>TryHackMe Security Engineer Path</h3>
+                        <div class="icons">
+                            <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-RC5AWAPZRG.pdf" class="icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="image">
+                        <img src="Images/aws.jpg" alt="AWS">
+                    </div>
+                    <div class="hover-items">
+                        <h3>AWS Certified Solutions Architect Associate</h3>
+                        <div class="icons">
+                            <a href="Coming SOON "class="icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                <h2 class="stat-title">Technical Skills</h2>
+                <div class="progress-bars">
+                    <div class="progress-bar">
+                        <p class="prog-title">Splunk</p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Python</p>
+                        <div class="progress-con">
+                            <p class="prog-text">95%</p>
+                            <div class="progress">
+                                <span class="css"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">SQL</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="js"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">ReactJS</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="react"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">AWS</p>
+                        <div class="progress-con">
+                            <p class="prog-text">87%</p>
+                            <div class="progress">
+                                <span class="node"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Wireshark</p>
+                        <div class="progress-con">
+                            <p class="prog-text">70%</p>
+                            <div class="progress">
+                                <span class="python"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="portfolio">
+            <div class="main-title">
+                <h2>My <span>Portfolio</span><span class="bg-text">MyPortfolio</span></h2>
+            </div>
+            <p class="port-text">
+                Here is some of my work that I've done in various programming languages.
+            </p>
+            <div class="portfolios">
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="images/Screenshot (38).png" alt="Calculator Web App">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Simple Calculator - AWS</h3>
+                        <div class="icons">
+                            <a href="https://dev.d3f5cpqp9mvl3p.amplifyapp.com/" class="icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                            <a href="https://github.com/EJHENNELLY/AWS-Calculator/blob/main/README.md" class="icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="Images/Screenshot (59).png" alt="Task Tracker">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Task Tracker Visualization</h3>
+                        <div class="icons">
+                            <a href="https://github.com/EJHENNELLY/Task-Tracker.git" class="icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="Images/static.png" alt="Static S3 Website">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Host a Static Website on AWS S3</h3>
+                        <div class="icons">
+                            <a href="https://github.com/EJHENNELLY/S3-Static-Site.git" class="icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="http://ej-resume-bucket.s3-website-us-east-1.amazonaws.com/" class="icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="blogs">
+            <div class="blogs-content">
+                <div class="main-title">
+                    <h2>My <span>Blogs</span><span class="bg-text">My Blogs</span></h2>
+                </div>
+                <div class="blogs">
+                    <div class="blog">
+                        <a href="https://github.com/EJHENNELLY/AWS-Calculator.git">
+                        <img src="Images/calculator icon.png" alt="Calculator Icon">
+                        </a>
+                        <div class="blog-text">
+                            <h4>
+                                Creating an End-to-End AWS Web Application Calculator
+                            </h4>
+                            <p>
+                                Follow along this tutorial to create a simple calculator using an HTML text editor, AWS Amplify, Lambda, DynamoDB, API-Gateway, and IAM.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="https://github.com/EJHENNELLY/Python-Automation.git">
+                            <img src="Images/check.png" alt="Allow List">
+                        </a>
+                        <div class="blog-text">
+                            <h4>
+                                Python Allow List Algorithm
+                            </h4>
+                            <p>
+                                For this project, I am a security analyst for a health care company. As part of my job, I am required to regularly update a file that identifies the employees that are allowed to access restricted content. The contents of the file are based on who is working with personal patient records.
+                                Employees are restricted access based on their IP address. I am tasked to create an algorithm that uses code to check whether the allow list contains any of the addresses from the remove list.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="https://github.com/EJHENNELLY/IDS-SIEM-Tools.git">
+                            <img src="Images/Detective.png" alt="Detective">
+                        </a>
+                        <div class="blog-text">
+                            <h4>
+                                Investigating security incidents with Splunk, Suricata, and Chronicle
+                            </h4>
+                            <p>
+                                In this scenario, I am a security analyst who muct monitor traffic on my employer's network and investigate incidents. I was provided tutorial data which resides in the tutorialdata.zip folder in the project files.
+                                First, I monitored the network traffic using Suricata and configured a custom rule to trigger alerts. Next, I analyzed the traffic using Splunk's SPL querying language and isolated failed SSH login attempts for the root account. Lastly, I used Chronicle to investigate an alert for a phishing incident and determined whether any other employees have visited the compromised domain.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="https://github.com/EJHENNELLY/Tcpdump-Wireshark.git">
+                            <img src="Images/Screenshot (39).png" alt="Wireshark Project Certificate">
+                        </a>
+                        <div class="blog-text">
+                            <h4>
+                                Capturing and analyzing network traffic with Wireshark and Tcpdump
+                            </h4>
+                            <p>
+                                In this scenario, I am a security analyst who must capture and analyze live network traffic from a Linux virtual machine using tcpdump. I will then use Wireshark to filter the captured traffic and answer questions about the data. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="https://github.com/EJHENNELLY/Conduct-a-Security-Audit.git">
+                            <img src="Images/Audit.jpg" alt="Audit">
+                        </a>
+                        <div class="blog-text">
+                            <h4>
+                                Botium Toys Security Audit
+                            </h4>
+                            <p>
+                                This project is based on the fictional company "Botium Toys". The manager of the IT department has determined that an internal audit needs to be conducted. The manager implements the NIST CSF to establish the audits scope and goals. My task is to review the IT manager's scope, goals, and risk assessment report then, perform an internal audit by completing a controls assessment checklist. I will then check to see if Botium Toys is adhering to PCI DSS, GDPR, and Organizational compliance best practices.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="https://github.com/EJHENNELLY/Detection-Response.git">
+                            <img src="Images/playbook.jpg" alt="Incident Response Playbook">
+                        </a>
+                        <div class="blog-text">
+                            <h4>
+                                Incident Response Playbook
+                            </h4>
+                            <p>
+                                In this scenario, I received an alert ticket indicating that a phishing attempt has been detected. I then followed the steps in the incident response playbook to investigate the alert and determine the appropriate response.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container contact" id="contact">
+            <div class="contact-container">
+                <div class="main-title">
+                    <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="left-contact">
+                        <h4>Contact me here!</h4>
+                        <p>
+                            Think I can help you with your next project? Feel free to reach out to me.
+                        </p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Location</span>
+                                </div>
+                                <p>
+                                    : Charleston, South Carolina
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                                <p>
+                                    <span>: ejh2@proton.me</span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Education</span>
+                                </div>
+                                <p>
+                                    <span>: University of South Carolina</span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>Mobile Number</span>
+                                </div>
+                                <p>
+                                    <span>: (678) 899-3119</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-icons">
+                            <div class="contact-icon">
+                                <a href="https://www.linkedin.com/in/edward-hennelly-8ab907168/" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/EJHENNELLY/EJHennelly" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-contact">
+                        <form action="" class="contact-form">
+                            <div class="input-control i-c-2">
+                                <input type="text" required placeholder="YOUR NAME">
+                                <input type="email" required placeholder="YOUR EMAIL">
+                            </div>
+                            <div class="input-control">
+                                <input type="text" required placeholder="ENTER SUBJECT">
+                            </div>
+                            <div class="input-control">
+                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                            </div>
+                            <div class="submit-btn">
+                                <a href="#" class="main-btn">
+                                    <span class="btn-text">Download CV</span>
+                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="controls">
+        <div class="control active-btn" data-id="home" >
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="control" data-id="about">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="control" data-id="Certificates & Skills">
+            <i class="fas fa-certificate"></i>
+        </div>
+        <div class="control" data-id="portfolio">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="control" data-id="blogs">
+            <i class="far fa-newspaper"></i>
+        </div>
+        <div class="control" data-id="contact">
+            <i class="fas fa-envelope-open"></i>
+        </div>
+    </div>
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
