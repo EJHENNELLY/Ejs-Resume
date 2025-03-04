@@ -1,4 +1,5 @@
-##AWS CLOUD RESUME CHALLENGE
+## AWS CLOUD RESUME CHALLENGE
+---
 
 This is my attempt at the cloud resume challenge in AWS. Follow along and learn with me!
 
@@ -8,7 +9,7 @@ You can find the link to the challenge here -> https://cloudresumechallenge.dev/
 
 ---
 
-#AWS SERVICES USED
+# AWS SERVICES USED
 - S3
 - Route 53
 - CloudFront
@@ -17,7 +18,7 @@ You can find the link to the challenge here -> https://cloudresumechallenge.dev/
 - Lambda
 - Dynamodb
 
-#OTHER SERVICES/TOOLS USED
+# OTHER SERVICES/TOOLS USED
 - HTML
 - CSS
 - JS
